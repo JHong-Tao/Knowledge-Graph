@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        function get_KG() {
+            var keyword = $("#keyword").text($(this)).val();
+            var url = "http://127.0.0.1:5000/getword?keyword="+keyword;
+            $.get(url,{},function (nodes) {
+                console.log(nodes);
+            });
+        }
+    </script>
+</head>
+<body>
+keyword: <input type="text" id="keyword">
+<input type="button" value="提交" id="sub" onclick="get_KG()">
+</body>
+</html>
